@@ -11,26 +11,26 @@ Admin post format inteface for Wordpress
 Video Post Format:
 ```sh
 <?php if ( has_post_format( 'video' )) : ?>
-<?php echo wp_oembed_get(get_post_meta($post->ID, '_pfui_video', true)); ?>
+  <?php echo wp_oembed_get(get_post_meta($post->ID, '_pfui_video', true)); ?>
 <?php endif ?>
 ```
 Audio Post Format:
 ```sh
 <?php if ( has_post_format( 'audio' )) : ?>
-<?php echo wp_oembed_get(get_post_meta($post->ID, '_pfui_audio', true)); ?>
+  <?php echo wp_oembed_get(get_post_meta($post->ID, '_pfui_audio', true)); ?>
 <?php endif ?>
 ```
 Gallery Post Format:
 ```sh
 <?php if ( has_post_format( 'gallery' )) : ?>
-<?php
-$images = get_post_meta($post->ID, '_pfui_gallery', true);
-if ($images) {
-foreach ($images as $image) {
-$thumbnail = wp_get_attachment_image_src($image, 'thumbnail');
-echo '<img src="'. $thumbnail[0] .'">';
-}
-}
+  <?php
+  $images = get_post_meta($post->ID, '_pfui_gallery', true);
+  if ($images) {
+    foreach ($images as $image) {
+      $thumbnail = wp_get_attachment_image_src($image, 'thumbnail');
+      echo '<img src="'. $thumbnail[0] .'">';
+    }
+  }
 ?>
 <?php endif ?>
 ```
