@@ -27,7 +27,7 @@ Gallery Post Format:
   $images = get_post_meta($post->ID, '_pfui_gallery', true);
   if ($images) {
     foreach ($images as $image) {
-      $thumbnail = wp_get_attachment_image_src($image, 'thumbnail');
+      $thumbnail = wp_get_attachment_image_src($image, 'full');
       echo '<img src="'. $thumbnail[0] .'">';
     }
   }
