@@ -47,7 +47,7 @@
 
             //make images sortable
             var sortItems = function() {
-                if (jQuery.ui) {
+                if ($('#pfui-gallery').hasClass('pfui-gallery')) {
                     $('.pfui-gallery').sortable({
                         placeholder: "pfui-sortable-placeholder",
                         stop: function() {
